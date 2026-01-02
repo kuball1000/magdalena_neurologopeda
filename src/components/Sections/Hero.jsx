@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import profileImg from '../../assets/profile.jpg';
 
 const Hero = () => {
   return (
@@ -57,7 +58,7 @@ const Hero = () => {
            <div className="absolute inset-0 bg-brand-sage rounded-[2rem] rotate-3 transform translate-x-4 translate-y-4"></div>
            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] bg-white">
              <img 
-               src="/assets/profile.jpg" 
+               src={profileImg}  
                alt="Magdalena Chlebowicz" 
                className="w-full h-full object-cover object-center"
              />
