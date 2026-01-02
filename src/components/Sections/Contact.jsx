@@ -11,24 +11,17 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    // NOTE: Requires EmailJS Service ID, Template ID, and Public Key
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    // emailjs.sendForm('service_kx2w7t7', 'template_62yr03r', form.current, 'JpR4obB73dc-inh0o')
     
-    // Simulating success for now
-    setTimeout(() => {
-        setStatus('success');
-        form.current.reset();
-    }, 1500);
-
-    /* 
-    emailjs.sendForm('service_id', 'template_id', form.current, 'public_key')
+    emailjs.sendForm('service_kx2w7t7', 'template_62yr03r', form.current, 'JpR4obB73dc-inh0o')
       .then((result) => {
           setStatus('success');
           form.current.reset();
       }, (error) => {
+          console.error(error);
           setStatus('error');
       });
-    */
+    
   };
 
   return (
