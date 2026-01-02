@@ -19,7 +19,7 @@ const Hero = () => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000); // Change every 4 seconds
     return () => clearInterval(timer);
-  }, [images.length]);
+  }, [currentIndex, images.length]); // Add currentIndex to reset timer on manual change
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
