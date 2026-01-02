@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import dinoImg from '../../assets/dino.jpg';
 
 const Offer = () => {
   const services = [
@@ -47,28 +48,70 @@ const Offer = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start mb-16">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              className="lg:col-span-3 grid md:grid-cols-2 gap-8"
             >
-              <h3 className="text-xl font-bold text-brand-dark mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-6 text-sm leading-relaxed min-h-[60px]">{service.desc}</p>
-              <ul className="space-y-2">
-                {service.details.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
-                    <CheckCircle2 size={16} className="text-brand-sage flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              {services.slice(0, 4).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <h3 className="text-xl font-bold text-brand-dark mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed min-h-[60px]">{service.desc}</p>
+                  <ul className="space-y-2">
+                    {service.details.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
+                        <CheckCircle2 size={16} className="text-brand-sage flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </motion.div>
-          ))}
+            
+            <motion.div
+               initial={{ opacity: 0, scale: 0.9 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="lg:col-span-2 relative hidden lg:block"
+            >
+               <div className="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-500">
+                  <img src={dinoImg} alt="Terapia przez zabawę" className="w-full h-full object-cover" />
+               </div>
+               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-brand-blue/10 rounded-full blur-xl"></div>
+            </motion.div>
+
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="lg:col-span-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+               {services.slice(4).map((service, index) => (
+                <div
+                  key={index + 4}
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <h3 className="text-xl font-bold text-brand-dark mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed min-h-[60px]">{service.desc}</p>
+                  <ul className="space-y-2">
+                    {service.details.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
+                        <CheckCircle2 size={16} className="text-brand-sage flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
         </div>
 
         <div className="mt-12 text-center">

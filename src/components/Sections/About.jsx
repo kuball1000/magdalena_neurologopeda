@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Award } from 'lucide-react';
+import booksImg from '../../assets/books.jpg';
 
 const About = () => {
   return (
@@ -19,6 +20,20 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
+           {/* Image Column for Desktop - visible only on large screens, or maybe add it somewhere mixed */}
+           <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="md:col-span-2 lg:col-span-1 lg:order-2 mb-8 lg:mb-0"
+           >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] rotate-2 hover:rotate-0 transition-all duration-500">
+                <img src={booksImg} alt="Magdalena Chlebowicz" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-brand-sage/10"></div>
+              </div>
+           </motion.div>
+
+          <div className="md:col-span-2 lg:col-span-1 lg:order-1 space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,6 +110,7 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
     </section>

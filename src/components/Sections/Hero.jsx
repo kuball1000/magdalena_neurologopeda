@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import profileImg from '../../assets/profile.jpg';
+import profileImg from '../../assets/feathers.jpg';
 
 const Hero = () => {
   return (
