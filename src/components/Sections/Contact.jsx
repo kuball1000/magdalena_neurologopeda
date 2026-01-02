@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-brand-dark mb-1">Gabinet</h3>
-                <p className="text-gray-600 text-lg">ul. Konopackich 7a/5<br/>87-100 Toruń</p>
+                <p className="text-gray-600 text-lg">Przy Skarpie 10C/6<br/>87-100 Toruń</p>
               </div>
             </div>
           </div>
